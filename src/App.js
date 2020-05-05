@@ -3,7 +3,7 @@ import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import Layout from './components/layouts/';
 import routes from './routes/index'
 import './App.scss';
-import logo from './logo.svg';
+
 
 
 function withLayout(WrappedComponent) {

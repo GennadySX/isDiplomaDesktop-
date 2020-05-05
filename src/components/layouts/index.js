@@ -1,16 +1,24 @@
-import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import React, {Component} from 'react';
+import {withRouter} from 'react-router-dom';
 
 
 import Header from "./header";
 
 import Footer from "./footer";
+import Sidebar from "./sidebar";
+import TopSidebar from "./top_sidebar";
 
 const LayoutContent = (props) => {
     return <React.Fragment>
-        <Header />
-                {props.children}
-        <Footer />
+            <Header/>
+                <div className="d-flex flex-column" id="content-wrapper">
+                    <div id="content">
+                        <Sidebar />
+                        <TopSidebar />
+                        {props.children}
+                    </div>
+                </div>
+                <Footer/>
     </React.Fragment>
 }
 
@@ -19,16 +27,16 @@ const LayoutContent = (props) => {
 class Layout extends Component {
 
     constructor(props) {
-        super(props);
-        this.state = {
-        };
-    }
+    super(props);
+    this.state = {
+};
+}
 
     render() {
-        return (
-                 <LayoutContent {...this.props} />
-        );
-    }
+    return (
+    <LayoutContent {...this.props} />
+    );
+}
 }
 
 
